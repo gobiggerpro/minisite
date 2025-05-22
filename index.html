@@ -1,1737 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minisite Porang</title>
-    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
+    <title>[Nama Travel Anda] - Paket Haji dan Umroh Terpercaya</title>
     <style>
-      /* CSS dari file yang Anda berikan */
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-      :root {
-        --color-primary: #0055ff;
-        --color-primary-dark: #0044cc;
-        --color-background: #1e2128;
-        --color-text: #fff;
-        --color-text-secondary: #999999;
-        --color-text-dark: #000;
-        --color-text-gray: #666; /* [cite: 1] */
-        --color-text-light-gray: #bdbdbd; /* [cite: 2] */
-        --color-danger: #ff0000; /* [cite: 2] */
-        --color-white: #ffffff; /* [cite: 2] */
-        --border-radius-sm: 4px; /* [cite: 2] */
-        --border-radius-md: 6px; /* [cite: 2] */
-        --border-radius-lg: 12px; /* [cite: 2] */
-        --border-radius-full: 50%; /* [cite: 2] */
-        --spacing-xs: 5px; /* [cite: 2] */
-        --spacing-sm: 8px; /* [cite: 2] */
-        --spacing-md: 15px; /* [cite: 2] */
-        --spacing-lg: 20px; /* [cite: 3] */
-        --spacing-xl: 30px; /* [cite: 3] */
-        --spacing-2xl: 40px; /* [cite: 3] */
-      }
-      * {
-        font-family: 'Inter', sans-serif !important; /* [cite: 3] */
-        box-sizing: border-box;
-      }
-      body {
-        background-color: var(--color-background) !important; /* [cite: 3] */
-        color: var(--color-text) !important; /* [cite: 16] */
-        margin: 0;
-        padding-top: 60px; /* Tinggi navbar */
-      }
-      div[style*="--gap-d:32px"] {
-        padding: 0 !important; /* [cite: 4] */
-      }
-      @media (min-width: 1024px) {
-        .lg\:gap-\[var\(--gap-d\)\] {
-          gap: unset; /* [cite: 4] */
+        /* Contoh CSS Sederhana untuk Navbar Sticky dan dasar */
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky; /* Membuat navbar sticky */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Memastikan navbar di atas konten lain */
         }
-      }
-      @media (min-width: 768px) {
-        .md\:gap-\[var\(--gap-t\)\] {
-          gap: unset; /* [cite: 5] */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
-      }
-      .gap-\[var\(--gap-m\)\] {
-        gap: unset; /* [cite: 5] */
-      }
-      .hidden {
-        display: none !important; /* [cite: 6] */
-      }
-      #img-cover {
-        position: relative; /* [cite: 6] */
-        height: 130px !important; /* [cite: 6] */
-        padding: 0 !important; /* [cite: 6] */
-        overflow: hidden; /* [cite: 6] */
-        margin-bottom: 0 !important; /* [cite: 7] */
-        width: 100% !important; /* [cite: 7] */
-        max-width: 100% !important; /* [cite: 7] */
-        margin-left: 0 !important; /* [cite: 7] */
-        margin-right: 0 !important; /* [cite: 7] */
-      }
-      #img-cover img {
-        position: absolute; /* [cite: 8] */
-        top: 0; /* [cite: 8] */
-        left: 0; /* [cite: 8] */
-        width: 100%; /* [cite: 8] */
-        height: 100%; /* [cite: 8] */
-        object-fit: cover; /* [cite: 8] */
-        z-index: 0; /* [cite: 8] */
-        filter: brightness(60%); /* [cite: 8] */
-      }
-      #section-bio {
-        position: relative; /* [cite: 9] */
-        padding: 0 var(--spacing-lg) !important; /* [cite: 9] */
-        margin-bottom: var(--spacing-xl) !important; /* [cite: 9] */
-        width: 100% !important; /* [cite: 9] */
-        display: flex !important; /* [cite: 9] */
-        flex-direction: row !important; /* [cite: 10] */
-        flex-wrap: nowrap !important; /* [cite: 10] */
-        gap: var(--spacing-lg) !important; /* [cite: 10] */
-        align-items: flex-start !important; /* [cite: 10] */
-      }
-      #section-bio>div:nth-child(1) {
-        width: auto !important; /* [cite: 10] */
-        flex: 0 0 auto !important; /* [cite: 11] */
-        flex-basis: auto !important; /* [cite: 11] */
-        margin-top: -60px; /* [cite: 11] */
-      }
-      #section-bio>div:nth-child(1)>div {
-        width: 120px !important; /* [cite: 11] */
-        height: 120px !important; /* [cite: 11] */
-        border-radius: var(--border-radius-full) !important; /* [cite: 12] */
-        border: 5px solid var(--color-background) !important; /* [cite: 12] */
-        overflow: hidden; /* [cite: 12] */
-        flex-shrink: 0; /* [cite: 12] */
-        margin-top: 0 !important; /* [cite: 12] */
-        z-index: 1; /* [cite: 12] */
-        position: relative; /* [cite: 12] */
-      }
-      #section-bio>div:nth-child(1) img {
-        width: 100% !important; /* [cite: 13] */
-        height: 100% !important; /* [cite: 13] */
-        object-fit: cover !important; /* [cite: 13] */
-      }
-      #section-bio>div:nth-child(2) {
-        flex: 1 !important; /* [cite: 13] */
-        padding-top: 12px !important; /* [cite: 14] */
-        flex-basis: auto !important; /* [cite: 14] */
-        min-width: 0 !important; /* [cite: 14] */
-      }
-      #section-bio>div:nth-child(2)>div {
-        padding-left: 0 !important; /* [cite: 14] */
-        gap: var(--spacing-xs) !important; /* [cite: 14] */
-        position: relative !important; /* [cite: 15] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(1) .html-viewer p {
-        font-size: 24px !important; /* [cite: 15] */
-        font-weight: 700 !important; /* [cite: 15] */
-        margin-bottom: var(--spacing-xs) !important; /* [cite: 15] */
-        color: var(--color-text) !important; /* [cite: 16] */
-        line-height: 1.2 !important; /* [cite: 16] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(2) .html-viewer p {
-        color: var(--color-text-secondary) !important; /* [cite: 16] */
-        font-size: 14px !important; /* [cite: 16] */
-        line-height: 1.4 !important; /* [cite: 17] */
-        font-weight: 400 !important; /* [cite: 17] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(3) {
-        display: flex !important; /* [cite: 17] */
-        align-items: center !important; /* [cite: 17] */
-        background-color: rgba(0, 85, 255, 0.15) !important; /* [cite: 18] */
-        color: var(--color-text) !important; /* [cite: 18] */
-        font-size: 9px !important; /* [cite: 18] */
-        padding: var(--spacing-xs) var(--spacing-sm); /* [cite: 18] */
-        border-radius: 7px !important; /* [cite: 18] */
-        width: fit-content !important; /* [cite: 19] */
-        line-height: 1.5 !important; /* [cite: 19] */
-        position: relative !important; /* [cite: 19] */
-        white-space: nowrap !important; /* [cite: 19] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(3) .html-viewer {
-        display: flex !important; /* [cite: 19] */
-        align-items: center !important; /* [cite: 20] */
-        flex-direction: row !important; /* [cite: 20] */
-        white-space: nowrap !important; /* [cite: 20] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(3) .html-viewer i.ti {
-        display: inline-flex !important; /* [cite: 20] */
-        margin-right: 5px !important; /* [cite: 21] */
-        font-size: 14px !important; /* [cite: 21] */
-        color: var(--color-primary) !important; /* [cite: 21] */
-        line-height: 1 !important; /* [cite: 21] */
-      }
-      #section-bio>div:nth-child(2) div>div:nth-child(3) .html-viewer { /* Sepertinya duplikat, mungkin ada perbedaan minor atau typo di source */
-        font-size: 10px !important; /* [cite: 21] */
-        line-height: 1 !important; /* [cite: 22] */
-      }
-      @media (max-width: 767px) {
-        #section-bio {
-          flex-direction: row !important; /* [cite: 22] */
-          align-items: flex-start !important; /* [cite: 22] */
-          gap: var(--spacing-md) !important; /* [cite: 23] */
-          padding-top: 0 !important; /* [cite: 23] */
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
         }
-        #section-bio>div:nth-child(1)>div {
-          width: 120px !important; /* [cite: 23] */
-          height: 120px !important; /* [cite: 23] */
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x700.png?text=Suasana+Tanah+Suci'); /* Ganti dengan URL gambar Anda */
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
-        #section-bio>div:nth-child(2)>div {
-          margin-top: -38px; /* [cite: 24] */
+        .hero h1 { font-size: 3em; margin-bottom: 0.5em; text-shadow: 2px 2px 4px #000000; }
+        .hero p { font-size: 1.2em; margin-bottom: 1.5em; text-shadow: 1px 1px 2px #000000; }
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
         }
-        #section-bio>div:nth-child(2) {
-          padding-top: 5px !important; /* [cite: 24] */
+        .cta-button:hover { background-color: #45a049; }
+        section { padding: 60px 20px; text-align: center; }
+        section h2 { font-size: 2.5em; margin-bottom: 40px; }
+        .container { max-width: 1200px; margin: auto; }
+        .package-grid, .gallery-grid {
+            display: flex; /* Anda mungkin ingin menggunakan CSS Grid atau Flexbox yang lebih canggih */
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-      }
-      @media (min-width: 768px) and (max-width: 1023px) {
-        #img-cover {
-          height: 150px !important; /* [cite: 25] */
+        .package-item, .gallery-item, .testimonial-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px; /* Contoh lebar, sesuaikan dengan kebutuhan */
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
         }
-        #section-bio>div:nth-child(2)>div {
-          margin-top: -45px; /* [cite: 26] */
+        .package-item img, .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
         }
-      }
-      @media (min-width: 1024px) {
-        #img-cover {
-          height: 180px !important; /* [cite: 26] */
+        .package-item h3 { margin-top: 0; }
+        .biolinks-container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .biolink-button {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 250px; /* Lebar tombol biolink */
+            text-align: center;
         }
-        #section-bio>div:nth-child(2)>div {
-          margin-top: -45px; /* [cite: 27] */
+        .biolink-button:hover { background-color: #0056b3; }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
-      }
-      #section-social-top {
-        display: flex !important; /* [cite: 27] */
-        flex-direction: row !important; /* [cite: 27] */
-        justify-content: flex-start !important; /* [cite: 28] */
-        align-items: center !important; /* [cite: 28] */
-        padding: var(--spacing-md) var(--spacing-lg) !important; /* [cite: 28] */
-        background-color: var(--color-background) !important; /* [cite: 28] */
-        gap: var(--spacing-md) !important; /* [cite: 28] */
-        position: relative !important; /* [cite: 28] */
-        margin-top: -10px; /* [cite: 29] */
-      }
-      #section-social-top>div:first-child {
-        width: auto !important; /* [cite: 29] */
-        flex: 0 0 auto !important; /* [cite: 29] */
-      }
-      #section-social-top>div:first-child a {
-        background-color: var(--color-primary) !important; /* [cite: 29] */
-        border-radius: 10px !important; /* [cite: 30] */
-        font-weight: 600 !important; /* [cite: 30] */
-        min-height: 26px !important; /* [cite: 30] */
-        height: 36px !important; /* [cite: 30] */
-        font-size: 14px !important; /* [cite: 30] */
-        padding: 0 var(--spacing-md) !important; /* [cite: 30] */
-        transition: background-color 0.2s; /* [cite: 31] */
-        max-height: 32px !important; /* [cite: 31] */
-        display: flex !important; /* [cite: 31] */
-        align-items: center !important; /* [cite: 31] */
-        white-space: nowrap !important; /* [cite: 31] */
-        width: 120px; /* [cite: 31] */
-        min-width: 140px; /* [cite: 31] */
-      }
-      #section-social-top>div:first-child a:hover {
-        background-color: var(--color-primary-dark) !important; /* [cite: 32] */
-      }
-      .bt-social-icons-wrapper {
-        display: flex !important; /* [cite: 32] */
-        align-items: center !important; /* [cite: 32] */
-        gap: 12px !important; /* [cite: 32] */
-        justify-content: flex-start !important; /* [cite: 33] */
-      }
-      .bt-social-icon-item {
-        width: 30px; /* [cite: 33] */
-        height: 30px; /* [cite: 33] */
-        background-color: #ffffff; /* [cite: 33] */
-        border-radius: var(--border-radius-full); /* [cite: 33] */
-        display: flex !important; /* [cite: 33] */
-        align-items: center !important; /* [cite: 33] */
-        justify-content: center !important; /* [cite: 34] */
-        color: var(--color-background) !important; /* [cite: 34] */
-        text-decoration: none !important; /* [cite: 34] */
-        transition: background-color 0.2s; /* [cite: 34] */
-        flex-direction: row !important; /* [cite: 34] */
-      }
-      .bt-social-icon-item:hover {
-        background-color: var(--color-text-secondary); /* [cite: 34] */
-      }
-      .bt-social-icon-item i {
-        font-size: 18px; /* [cite: 35] */
-        color: inherit !important; /* [cite: 35] */
-      }
-      @media (max-width: 767px) {
-        #section-social-top {
-          flex-direction: row !important; /* [cite: 35] */
-          flex-wrap: nowrap !important; /* [cite: 36] */
-          padding: var(--spacing-md) var(--spacing-lg) !important; /* [cite: 36] */
-        }
-        .bt-social-icons-wrapper {
-          justify-content: flex-start !important; /* [cite: 36] */
-          gap: 8px !important; /* [cite: 36] */
-        }
-        #section-social-top>div:first-child {
-          flex: 0 0 auto !important; /* [cite: 37] */
-        }
-        #section-social-top>div:nth-child(2) {
-          flex: 0 0 auto !important; /* [cite: 38] */
-        }
-        .bt-social-icon-item {
-          width: 28px; /* [cite: 39] */
-          height: 28px; /* [cite: 39] */
-        }
-      }
-      [id^="section-title-"] {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 39] */
-        margin-top: var(--spacing-2xl) !important; /* [cite: 40] */
-        position: relative !important; /* [cite: 40] */
-      }
-      [id^="section-title-"]>div:nth-child(1)>div .html-viewer p {
-        font-size: 20px !important; /* [cite: 40] */
-        font-weight: 600 !important; /* [cite: 40] */
-        color: var(--color-text) !important; /* [cite: 40] */
-        margin-bottom: var(--spacing-sm) !important; /* [cite: 41] */
-        line-height: 1.3 !important; /* [cite: 41] */
-      }
-      [id^="section-title-"]>div:nth-child(2)>div .html-viewer p {
-        font-size: 14px !important; /* [cite: 41] */
-        color: var(--color-text-secondary) !important; /* [cite: 41] */
-        line-height: 1.4 !important; /* [cite: 41] */
-        margin-top: -5px !important; /* [cite: 42] */
-        margin-bottom: var(--spacing-md) !important; /* [cite: 42] */
-      }
-      @media (max-width: 767px) {
-        [id^="section-title-"]>div:nth-child(1)>div .html-viewer p {
-          font-size: 18px !important; /* [cite: 42] */
-        }
-      }
-      [id^="section-product-slide-"] {
-        position: relative !important; /* [cite: 43] */
-        overflow: hidden !important; /* [cite: 43] */
-        padding: 0 var(--spacing-lg) !important; /* [cite: 43] */
-        margin-bottom: var(--spacing-xl) !important; /* [cite: 43] */
-        display: flex !important; /* [cite: 44] */
-        overflow-x: auto !important; /* [cite: 44] */
-        scrollbar-width: none !important; /* [cite: 44] */
-        -ms-overflow-style: none !important; /* [cite: 44] */
-        scroll-behavior: smooth !important; /* [cite: 44] */
-        gap: var(--spacing-md) !important; /* [cite: 45] */
-        flex-wrap: nowrap !important; /* [cite: 45] */
-        padding-bottom: var(--spacing-sm) !important; /* [cite: 45] */
-      }
-      [id^="section-product-slide-"]::-webkit-scrollbar {
-        display: none !important; /* [cite: 45] */
-      }
-      [id^="section-product-slide-"].dragging {
-        cursor: grabbing !important; /* [cite: 46] */
-        scroll-behavior: auto !important; /* [cite: 46] */
-      }
-      [id^="section-product-slide-"]>div {
-        min-width: 85% !important; /* [cite: 46] */
-        max-width: 85% !important; /* [cite: 46] */
-        flex: 0 0 auto !important; /* [cite: 47] */
-        margin-right: var(--spacing-xs) !important; /* [cite: 47] */
-      }
-      @media (min-width: 768px) {
-        [id^="section-product-slide-"]>div {
-          min-width: 43% !important; /* [cite: 47] */
-          max-width: 43% !important; /* [cite: 48] */
-        }
-      }
-      [id^="section-product-slide-"]>div>div {
-        background-color: var(--color-white) !important; /* [cite: 48] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 48] */
-        overflow: hidden !important; /* [cite: 48] */
-        display: flex !important; /* [cite: 48] */
-        flex-direction: column !important; /* [cite: 49] */
-        height: 100% !important; /* [cite: 49] */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important; /* [cite: 49] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(1) {
-        position: relative !important; /* [cite: 50] */
-        width: 100% !important; /* [cite: 50] */
-        padding-top: 56.25% !important; /* [cite: 50] */
-        overflow: hidden !important; /* [cite: 50] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(1)>div {
-        position: absolute !important; /* [cite: 51] */
-        top: 0 !important; /* [cite: 51] */
-        left: 0 !important; /* [cite: 51] */
-        width: 100% !important; /* [cite: 51] */
-        height: 100% !important; /* [cite: 51] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(1) img {
-        width: 100% !important; /* [cite: 52] */
-        height: 100% !important; /* [cite: 52] */
-        object-fit: cover !important; /* [cite: 52] */
-        object-position: center !important; /* [cite: 52] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(2) {
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-xs) var(--spacing-md) !important; /* [cite: 53] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(2) .html-viewer p {
-        font-size: 18px !important; /* [cite: 53] */
-        font-weight: 700 !important; /* [cite: 53] */
-        margin-bottom: var(--spacing-xs) !important; /* [cite: 54] */
-        color: var(--color-text-dark) !important; /* [cite: 54] */
-        line-height: 1.2 !important; /* [cite: 54] */
-        display: -webkit-box !important; /* [cite: 54] */
-        -webkit-line-clamp: 2 !important; /* [cite: 54] */
-        -webkit-box-orient: vertical !important; /* [cite: 54] */
-        overflow: hidden !important; /* [cite: 55] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(3) {
-        padding: 0 var(--spacing-md) !important; /* [cite: 55] */
-        flex-grow: 1 !important; /* [cite: 55] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(3) .html-viewer p {
-        font-size: 14px !important; /* [cite: 56] */
-        color: var(--color-text-gray) !important; /* [cite: 56] */
-        margin-bottom: var(--spacing-md) !important; /* [cite: 56] */
-        line-height: 1.4 !important; /* [cite: 56] */
-        display: -webkit-box !important; /* [cite: 56] */
-        -webkit-line-clamp: 2 !important; /* [cite: 57] */
-        -webkit-box-orient: vertical !important; /* [cite: 57] */
-        overflow: hidden !important; /* [cite: 57] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(4) {
-        padding: 0 var(--spacing-md) !important; /* [cite: 57] */
-        margin-top: 10px; /* [cite: 57] */
-      }
-      .product-price-container {
-        display: flex !important; /* [cite: 58] */
-        justify-content: space-between !important; /* [cite: 58] */
-        align-items: flex-end !important; /* [cite: 58] */
-        margin-bottom: var(--spacing-md) !important; /* [cite: 58] */
-        height: 35px !important; /* [cite: 58] */
-      }
-      .product-price-block {
-        display: flex !important; /* [cite: 59] */
-        flex-direction: column !important; /* [cite: 59] */
-      }
-      .product-original-price {
-        font-size: 12px !important; /* [cite: 59] */
-        color: var(--color-danger) !important; /* [cite: 59] */
-        text-decoration: line-through !important; /* [cite: 60] */
-        font-weight: 600 !important; /* [cite: 60] */
-      }
-      .product-current-price {
-        font-size: 18px !important; /* [cite: 60] */
-        font-weight: 700 !important; /* [cite: 60] */
-        color: var(--color-primary) !important; /* [cite: 60] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(5) {
-        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md) !important; /* [cite: 61] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(5) a {
-        background-color: var(--color-primary) !important; /* [cite: 61] */
-        color: var(--color-white) !important; /* [cite: 61] */
-        border: none !important; /* [cite: 62] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 62] */
-        padding: 9px var(--spacing-md) !important; /* [cite: 62] */
-        font-weight: 600 !important; /* [cite: 62] */
-        cursor: pointer !important; /* [cite: 62] */
-        text-decoration: none !important; /* [cite: 62] */
-        text-align: center !important; /* [cite: 63] */
-        display: inline-block !important; /* [cite: 63] */
-        width: 100% !important; /* [cite: 63] */
-        font-size: 14px !important; /* [cite: 63] */
-        transition: background-color 0.2s !important; /* [cite: 63] */
-      }
-      [id^="section-product-slide-"]>div>div>div:nth-child(5) a:hover {
-        background-color: var(--color-primary-dark) !important; /* [cite: 64] */
-      }
-      [id^="section-product-slide-"] a[id^="button-"] {
-        background-color: var(--color-primary) !important; /* [cite: 64] */
-        color: var(--color-white) !important; /* [cite: 64] */
-        border: none !important; /* [cite: 64] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 65] */
-        padding: 0 var(--spacing-md) !important; /* [cite: 65] */
-        font-weight: 600 !important; /* [cite: 65] */
-        cursor: pointer !important; /* [cite: 65] */
-        text-decoration: none !important; /* [cite: 65] */
-        text-align: center !important; /* [cite: 65] */
-        display: flex !important; /* [cite: 66] */
-        align-items: center !important; /* [cite: 66] */
-        justify-content: center !important; /* [cite: 66] */
-        width: 100% !important; /* [cite: 66] */
-        font-size: 14px !important; /* [cite: 66] */
-        transition: background-color 0.2s !important; /* [cite: 66] */
-        height: 35px !important; /* [cite: 67] */
-        min-height: 35px !important; /* [cite: 67] */
-      }
-      [id^="section-product-slide-"] a[id^="button-"]:hover {
-        background-color: var(--color-primary-dark) !important; /* [cite: 67] */
-      }
-      [id^="section-product-slide-"] div[buttonid] {
-        background-color: transparent !important; /* [cite: 67] */
-        padding: 0 !important; /* [cite: 68] */
-        height: 35px !important; /* [cite: 68] */
-        display: flex !important; /* [cite: 68] */
-        align-items: center !important; /* [cite: 68] */
-      }
-      [id^="section-product-slide-"] div[id^="section-"]>div:nth-child(5) {
-        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md) !important; /* [cite: 69] */
-      }
-      @media (min-width: 768px) {
-        [id^="section-product-slide-"] {
-          position: relative !important; /* [cite: 70] */
-        }
-      }
-      [id^="section-product-big-"] {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 70] */
-        margin-bottom: var(--spacing-xl) !important; /* [cite: 71] */
-        display: flex !important; /* [cite: 71] */
-        flex-wrap: wrap !important; /* [cite: 71] */
-        gap: var(--spacing-lg) !important; /* [cite: 71] */
-      }
-      [id^="section-product-big-"]>div {
-        flex: 0 0 100% !important; /* [cite: 71] */
-        max-width: 100% !important; /* [cite: 72] */
-      }
-      @media (min-width: 768px) {
-        [id^="section-product-big-"]>div {
-          flex: 0 0 calc(50% - var(--spacing-lg) / 2) !important; /* [cite: 72] */
-          max-width: calc(50% - var(--spacing-md) / 2) !important; /* [cite: 73] */
-        }
-      }
-      [id^="section-product-big-"]>div>div {
-        margin-bottom: 0 !important; /* [cite: 73] */
-        background-color: var(--color-white) !important; /* [cite: 73] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 74] */
-        overflow: hidden !important; /* [cite: 74] */
-        display: flex !important; /* [cite: 74] */
-        flex-direction: column !important; /* [cite: 74] */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important; /* [cite: 75] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(1) {
-        position: relative !important; /* [cite: 75] */
-        width: 100% !important; /* [cite: 75] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(1)>div {
-        position: relative !important; /* [cite: 76] */
-        width: 100% !important; /* [cite: 76] */
-        padding-top: 56.25% !important; /* [cite: 76] */
-        overflow: hidden !important; /* [cite: 76] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(1)>div img {
-        position: absolute !important; /* [cite: 77] */
-        top: 0 !important; /* [cite: 77] */
-        left: 0 !important; /* [cite: 77] */
-        width: 100% !important; /* [cite: 77] */
-        height: 100% !important; /* [cite: 77] */
-        object-fit: cover !important; /* [cite: 78] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(2) {
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-xs) var(--spacing-md) !important; /* [cite: 78] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(2) .html-viewer p {
-        font-size: 18px !important; /* [cite: 78] */
-        font-weight: 700 !important; /* [cite: 79] */
-        margin-bottom: var(--spacing-xs) !important; /* [cite: 79] */
-        color: var(--color-text-dark) !important; /* [cite: 79] */
-        line-height: 1.2 !important; /* [cite: 79] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(3) {
-        padding: 0 var(--spacing-md) !important; /* [cite: 79] */
-        flex-grow: 1 !important; /* [cite: 80] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(3) .html-viewer p {
-        font-size: 14px !important; /* [cite: 80] */
-        color: var(--color-text-gray) !important; /* [cite: 80] */
-        margin-bottom: var(--spacing-md) !important; /* [cite: 80] */
-        line-height: 1.4 !important; /* [cite: 80] */
-      }
-      .bt-card-big-divider {
-        height: 1px !important; /* [cite: 81] */
-        background-color: #e8e8e8 !important; /* [cite: 81] */
-        margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md) !important; /* [cite: 81] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(5) { /* Child 4 missing in source, assuming this is for price/button container */
-        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md) !important; /* [cite: 82] */
-      }
-      .bt-card-big-price-container {
-        display: flex !important; /* [cite: 82] */
-        justify-content: space-between !important; /* [cite: 82] */
-        align-items: flex-end !important; /* [cite: 83] */
-        margin-bottom: 0 !important; /* [cite: 83] */
-      }
-      .bt-card-big-price-block {
-        display: flex !important; /* [cite: 83] */
-        flex-direction: column !important; /* [cite: 83] */
-      }
-      .bt-card-big-original-price {
-        font-size: 12px !important; /* [cite: 84] */
-        color: var(--color-danger) !important; /* [cite: 84] */
-        text-decoration: line-through !important; /* [cite: 84] */
-        font-weight: 600 !important; /* [cite: 84] */
-      }
-      .bt-card-big-current-price {
-        font-size: 18px !important; /* [cite: 85] */
-        font-weight: 700 !important; /* [cite: 85] */
-        color: var(--color-primary) !important; /* [cite: 85] */
-      }
-      [id^="section-product-big-"] a[id^="button-"] {
-        background-color: var(--color-primary) !important; /* [cite: 85] */
-        color: var(--color-white) !important; /* [cite: 86] */
-        border: none !important; /* [cite: 86] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 86] */
-        padding: 7px var(--spacing-md) !important; /* [cite: 86] */
-        font-weight: 600 !important; /* [cite: 86] */
-        cursor: pointer !important; /* [cite: 86] */
-        text-decoration: none !important; /* [cite: 87] */
-        text-align: center !important; /* [cite: 87] */
-        display: flex !important; /* [cite: 87] */
-        align-items: center !important; /* [cite: 87] */
-        justify-content: center !important; /* [cite: 87] */
-        height: auto !important; /* [cite: 87] */
-        font-size: 14px !important; /* [cite: 88] */
-        transition: background-color 0.2s !important; /* [cite: 88] */
-      }
-      [id^="section-product-big-"] a[id^="button-"]:hover {
-        background-color: var(--color-primary-dark) !important; /* [cite: 88] */
-      }
-      [id^="section-product-big-"] a[id^="button-"] svg {
-        margin-right: 8px !important; /* [cite: 89] */
-      }
-      [id^="section-product-big-"] div[buttonid] {
-        background-color: transparent !important; /* [cite: 89] */
-        padding: 0 !important; /* [cite: 89] */
-      }
-      [id^="section-product-big-"]>div {
-        display: flex !important; /* [cite: 90] */
-      }
-      [id^="section-product-big-"]>div>div {
-        height: 100% !important; /* [cite: 90] */
-        flex: 1 !important; /* [cite: 90] */
-      }
-      [id^="section-product-big-"]>div>div>div:nth-child(3) {
-        flex: 1 !important; /* [cite: 91] */
-      }
-      [id^="section-product-big-"]>div>div>div {
-        display: flex !important; /* [cite: 91] */
-        flex-direction: column !important; /* [cite: 91] */
-      }
-      [id^="section-product-big-"]>div>[id^="section-"] { /* Selector might be too generic, assuming it targets the card content wrapper */
-        display: flex !important; /* [cite: 92] */
-        flex-direction: column !important; /* [cite: 92] */
-        height: 100% !important; /* [cite: 92] */
-      }
-      [id^="section-product-big-"]>div>div>div:last-child>div[id^="section-"] { /* Selector might be too generic */
-        align-items: flex-end; /* [cite: 92] */
-      }
-      .bt-section-title-wrapper {
-        display: flex; /* [cite: 93] */
-        align-items: center; /* [cite: 93] */
-        justify-content: flex-start; /* [cite: 93] */
-        width: 100%; /* [cite: 93] */
-        margin-bottom: var(--spacing-sm); /* [cite: 93] */
-      }
-      .bt-section-title-heading {
-        font-size: 20px !important; /* [cite: 93] */
-        font-weight: 600; /* [cite: 94] */
-        color: var(--color-text); /* [cite: 94] */
-        line-height: 1.3; /* [cite: 94] */
-        margin: 0; /* [cite: 94] */
-        padding: 0; /* [cite: 94] */
-        font-family: 'Inter', sans-serif !important; /* [cite: 94] */
-      }
-      .bt-badge-blue {
-        display: inline-flex; /* [cite: 94] */
-        align-items: center; /* [cite: 95] */
-        justify-content: center; /* [cite: 95] */
-        background-color: var(--color-primary); /* [cite: 95] */
-        color: var(--color-white); /* [cite: 95] */
-        font-size: 10px; /* [cite: 95] */
-        font-weight: 600; /* [cite: 95] */
-        padding: 2px 8px; /* [cite: 95] */
-        border-radius: 4px; /* [cite: 95] */
-        margin-left: 8px; /* [cite: 95] */
-        height: 18px; /* [cite: 96] */
-        text-transform: uppercase; /* [cite: 96] */
-        letter-spacing: 0.5px; /* [cite: 96] */
-        font-family: 'Inter', sans-serif; /* [cite: 96] */
-      }
-      .bt-badge-red {
-        display: inline-flex; /* [cite: 96] */
-        align-items: center; /* [cite: 96] */
-        justify-content: center; /* [cite: 96] */
-        background-color: #ff3b30; /* [cite: 96] */
-        color: var(--color-white); /* [cite: 97] */
-        font-size: 10px; /* [cite: 97] */
-        font-weight: 600; /* [cite: 97] */
-        padding: 2px 8px; /* [cite: 97] */
-        border-radius: 4px; /* [cite: 97] */
-        margin-left: 8px; /* [cite: 97] */
-        height: 18px; /* [cite: 97] */
-        text-transform: uppercase; /* [cite: 97] */
-        letter-spacing: 0.5px; /* [cite: 97] */
-        font-family: 'Inter', sans-serif; /* [cite: 98] */
-      }
-      .bt-badge-orange {
-        display: inline-flex; /* [cite: 98] */
-        align-items: center; /* [cite: 98] */
-        justify-content: center; /* [cite: 98] */
-        background-color: #ff9500; /* [cite: 98] */
-        color: var(--color-white); /* [cite: 98] */
-        font-size: 10px; /* [cite: 98] */
-        font-weight: 600; /* [cite: 98] */
-        padding: 2px 8px; /* [cite: 99] */
-        border-radius: 4px; /* [cite: 99] */
-        margin-left: 8px; /* [cite: 99] */
-        height: 18px; /* [cite: 99] */
-        text-transform: uppercase; /* [cite: 99] */
-        letter-spacing: 0.5px; /* [cite: 99] */
-        font-family: 'Inter', sans-serif; /* [cite: 99] */
-      }
-      .bt-badge-green {
-        display: inline-flex; /* [cite: 100] */
-        align-items: center; /* [cite: 100] */
-        justify-content: center; /* [cite: 100] */
-        background-color: #139434; /* [cite: 100] */
-        color: var(--color-white); /* [cite: 100] */
-        font-size: 10px; /* [cite: 100] */
-        font-weight: 600; /* [cite: 100] */
-        padding: 2px 8px; /* [cite: 100] */
-        border-radius: 4px; /* [cite: 101] */
-        margin-left: 8px; /* [cite: 101] */
-        height: 18px; /* [cite: 101] */
-        text-transform: uppercase; /* [cite: 101] */
-        letter-spacing: 0.5px; /* [cite: 101] */
-        font-family: 'Inter', sans-serif; /* [cite: 101] */
-      }
-      .bt-badge-gray {
-        display: inline-flex; /* [cite: 101] */
-        align-items: center; /* [cite: 101] */
-        justify-content: center; /* [cite: 102] */
-        background-color: #8e8e93; /* [cite: 102] */
-        color: var(--color-white); /* [cite: 102] */
-        font-size: 10px; /* [cite: 102] */
-        font-weight: 600; /* [cite: 102] */
-        padding: 2px 8px; /* [cite: 102] */
-        border-radius: 4px; /* [cite: 102] */
-        margin-left: 8px; /* [cite: 102] */
-        height: 18px; /* [cite: 102] */
-        text-transform: uppercase; /* [cite: 103] */
-        letter-spacing: 0.5px; /* [cite: 103] */
-        font-family: 'Inter', sans-serif; /* [cite: 103] */
-      }
-      @media (max-width: 767px) {
-        .bt-section-title-heading {
-          font-size: 18px; /* [cite: 103] */
-        }
-      }
-      [id^="section-product-card-horizontal-"] {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 104] */
-        margin-bottom: var(--spacing-lg) !important; /* [cite: 104] */
-      }
-      [id^="section-product-card-horizontal-"]>div>div {
-        display: flex !important; /* [cite: 104] */
-        background-color: var(--color-white) !important; /* [cite: 104] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 105] */
-        overflow: hidden !important; /* [cite: 105] */
-        height: 120px !important; /* [cite: 105] */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important; /* [cite: 105] */
-      }
-      [id^="section-product-card-horizontal-"]>div>div>div:nth-child(1) {
-        width: 120px !important; /* [cite: 106] */
-        min-width: 120px !important; /* [cite: 106] */
-        max-width: 120px !important; /* [cite: 106] */
-        height: 120px !important; /* [cite: 106] */
-        flex-shrink: 0 !important; /* [cite: 106] */
-        flex-grow: 0 !important; /* [cite: 107] */
-      }
-      [id^="section-product-card-horizontal-"]>div>div>div:nth-child(1) img { /* Redundant selector, combining */
-        width: 100% !important; /* [cite: 107] */
-        height: 100% !important; /* [cite: 107] */
-        object-fit: cover !important; /* [cite: 107] */
-        object-position: center !important; /* [cite: 107] */
-      }
-      [id^="section-product-card-horizontal-"]>div>div>div:nth-child(1)>[id^="section-"], /* Selector might be too generic */
-      [id^="section-product-card-horizontal-"]>div>div>div:nth-child(1)>div { /* Selector might be too generic */
-        width: 100% !important; /* [cite: 108] */
-        height: 100% !important; /* [cite: 108] */
-      }
-      [id^="section-product-card-horizontal-"]>div>div>div:nth-child(2) {
-        padding: var(--spacing-md) !important; /* [cite: 108] */
-        flex: 1 !important; /* [cite: 108] */
-        width: calc(100% - 120px) !important; /* [cite: 109] */
-        display: flex !important; /* [cite: 109] */
-        flex-direction: column !important; /* [cite: 109] */
-        justify-content: space-around !important; /* [cite: 109] */
-        overflow: hidden !important; /* [cite: 109] */
-        height: 100% !important; /* [cite: 109] */
-      }
-      [id^="section-product-card-horizontal-"] div[id^="text-area-"], /* Selector might be too generic */
-      [id^="section-product-card-horizontal-"] div[id^="text_area-"] { /* Selector might be too generic */
-        padding: 0 !important; /* [cite: 110] */
-        margin: 0 !important; /* [cite: 110] */
-        flex: 0 0 auto !important; /* [cite: 110] */
-        height: auto !important; /* [cite: 110] */
-        max-height: calc(1.3em * 2) !important; /* [cite: 111] */
-      }
-      [id^="section-product-card-horizontal-"] div[id^="text-area-"] .html-viewer p, /* Selector might be too generic */
-      [id^="section-product-card-horizontal-"] div[id^="text_area-"] .html-viewer p { /* Selector might be too generic */
-        font-size: 16px !important; /* [cite: 111] */
-        font-weight: 700 !important; /* [cite: 111] */
-        color: var(--color-text-dark) !important; /* [cite: 112] */
-        margin: 0 !important; /* [cite: 112] */
-        line-height: 1.3 !important; /* [cite: 112] */
-        display: -webkit-box !important; /* [cite: 112] */
-        -webkit-line-clamp: 2 !important; /* [cite: 112] */
-        -webkit-box-orient: vertical !important; /* [cite: 112] */
-        overflow: hidden !important; /* [cite: 113] */
-        text-overflow: ellipsis !important; /* [cite: 113] */
-        max-height: calc(1.3em * 2) !important; /* [cite: 113] */
-      }
-      [id^="section-product-card-horizontal-"] div[id^="html-code-"], /* Selector might be too generic */
-      [id^="section-product-card-horizontal-"] div[id^="html_code-"] { /* Selector might be too generic */
-        margin-top: auto !important; /* [cite: 113] */
-        padding: 0 !important; /* [cite: 114] */
-      }
-      .bt-card-horizontal-price-container {
-        display: flex !important; /* [cite: 114] */
-        justify-content: space-between !important; /* [cite: 114] */
-        margin-top: auto !important; /* [cite: 114] */
-        width: 100% !important; /* [cite: 114] */
-        align-items: flex-end !important; /* [cite: 115] */
-      }
-      .bt-card-horizontal-price-block {
-        display: flex !important; /* [cite: 115] */
-        flex-direction: column !important; /* [cite: 115] */
-      }
-      .bt-card-horizontal-original-price {
-        font-size: 12px !important; /* [cite: 115] */
-        color: var(--color-danger) !important; /* [cite: 116] */
-        text-decoration: line-through !important; /* [cite: 116] */
-        font-weight: 600 !important; /* [cite: 116] */
-        margin-bottom: -5px; /* [cite: 116] */
-      }
-      .bt-card-horizontal-price {
-        font-size: 18px !important; /* [cite: 116] */
-        font-weight: 700 !important; /* [cite: 116] */
-        color: var(--color-primary) !important; /* [cite: 117] */
-      }
-      .bt-card-horizontal-cart-button {
-        width: 36px !important; /* [cite: 117] */
-        height: 36px !important; /* [cite: 117] */
-        background-color: var(--color-primary) !important; /* [cite: 117] */
-        border-radius: 50% !important; /* [cite: 117] */
-        display: flex !important; /* [cite: 118] */
-        align-items: center !important; /* [cite: 118] */
-        justify-content: center !important; /* [cite: 118] */
-        color: var(--color-white) !important; /* [cite: 118] */
-        text-decoration: none !important; /* [cite: 118] */
-        transition: background-color 0.2s !important; /* [cite: 118] */
-      }
-      .bt-card-horizontal-cart-button:hover {
-        background-color: var(--color-primary-dark) !important; /* [cite: 119] */
-      }
-      .bt-card-horizontal-cart-button i {
-        font-size: 16px !important; /* [cite: 119] */
-      }
-      [id^="section-product-card-horizontal-"] [id^="section-"] { /* Selector might be too generic */
-        gap: 5px !important; /* [cite: 119] */
-      }
-      [id^="section-product-card-horizontal-"]>div {
-        margin-bottom: var(--spacing-lg) !important; /* [cite: 120] */
-      }
-      [id^="section-product-card-horizontal-"]>div:last-child {
-        margin-bottom: 0 !important; /* [cite: 120] */
-      }
-      @media (max-width: 767px) {
-        [id^="section-product-card-horizontal-"]>div {
-          flex: 0 0 100% !important; /* [cite: 121] */
-          max-width: 100% !important; /* [cite: 121] */
-        }
-      }
-      @media (min-width: 768px) {
-        [id^="section-product-card-horizontal-"] {
-          display: flex !important; /* [cite: 122] */
-          flex-wrap: wrap !important; /* [cite: 122] */
-          gap: var(--spacing-lg) !important; /* [cite: 122] */
-        }
-        [id^="section-product-card-horizontal-"]>div {
-          flex: 0 0 calc(50% - var(--spacing-lg) / 2) !important; /* [cite: 123] */
-          max-width: calc(50% - var(--spacing-lg) / 2) !important; /* [cite: 124] */
-          margin-bottom: 0px !important; /* [cite: 124] */
-        }
-      }
-      #section-testimony {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 124] */
-        overflow: hidden !important; /* [cite: 124] */
-        position: relative !important; /* [cite: 125] */
-      }
-      #section-testimony .flex.w-full.flex-col.space-y-\[24px\] { /* Highly specific selector */
-        display: flex !important; /* [cite: 125] */
-        flex-direction: row !important; /* [cite: 125] */
-        flex-wrap: nowrap !important; /* [cite: 125] */
-        gap: var(--spacing-lg) !important; /* [cite: 125] */
-        width: max-content !important; /* [cite: 126] */
-        animation: none; /* [cite: 126] */ /* JS will set this */
-        overflow-x: visible !important; /* [cite: 126] */
-        margin-bottom: 20px; /* [cite: 126] */
-      }
-      #section-testimony .flex.w-full.flex-col.space-y-\[24px\]:after { /* Highly specific selector */
-        content: ""; /* [cite: 126] */
-        display: block; /* [cite: 126] */
-        width: 15px; /* [cite: 126] */
-      }
-      #section-testimony .flex.w-full.flex-col.space-y-\[24px\] { /* Highly specific selector, JS will set animation */
-        animation: continuous-scroll 20s linear infinite; /* [cite: 127] */
-      }
-      @keyframes continuous-scroll {
-        0% {
-          transform: translateX(0); /* [cite: 127] */
-        }
-        100% {
-          transform: translateX(calc(-295px * 3 - 30px)); /* [cite: 128] */ /* Adjust based on item width and count */
-        }
-      }
-      #section-testimony .space-y-\[24px\]>*+* { /* Highly specific selector */
-        margin-top: 0 !important; /* [cite: 128] */
-      }
-      #section-testimony:hover .flex.w-full.flex-col.space-y-\[24px\] { /* Highly specific selector */
-        animation-play-state: paused; /* [cite: 129] */
-      }
-      #section-testimony .rounded.border-\[2px\] { /* Highly specific selector */
-        min-width: 280px !important; /* [cite: 129] */
-        max-width: 280px !important; /* [cite: 129] */
-        flex: 0 0 auto !important; /* [cite: 130] */
-        margin: 0 !important; /* [cite: 130] */
-        background: #ffffff !important; /* [cite: 130] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 130] */
-        border: none; /* [cite: 130] */
-      }
-      #section-testimony>div>div>div {
-        position: relative !important; /* [cite: 131] */
-        overflow: hidden !important; /* [cite: 131] */
-        width: 100% !important; /* [cite: 131] */
-        padding: 0 !important; /* [cite: 131] */
-      }
-      [id^="section-benefit"] {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 132] */
-        margin-bottom: var(--spacing-xl) !important; /* [cite: 132] */
-      }
-      [id^="section-benefit"]>div>div {
-        background-color: rgba(255, 255, 255, 0.05) !important; /* [cite: 132] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 133] */
-        padding: var(--spacing-md) !important; /* [cite: 133] */
-        display: flex !important; /* [cite: 133] */
-        align-items: center !important; /* [cite: 133] */
-        gap: var(--spacing-md) !important; /* [cite: 133] */
-      }
-      [id^="section-benefit"]>div>div>div:first-child {
-        width: 50px !important; /* [cite: 134] */
-        height: 50px !important; /* [cite: 134] */
-        min-width: 50px !important; /* [cite: 134] */
-        flex: 0 0 50px !important; /* [cite: 134] */
-        border-radius: 50% !important; /* [cite: 134] */
-        background-color: var(--color-primary) !important; /* [cite: 135] */
-        display: flex !important; /* [cite: 135] */
-        align-items: center !important; /* [cite: 135] */
-        justify-content: center !important; /* [cite: 135] */
-        overflow: hidden !important; /* [cite: 135] */
-      }
-      [id^="section-benefit"]>div>div>div:first-child .html-viewer {
-        display: flex !important; /* [cite: 136] */
-        align-items: center !important; /* [cite: 136] */
-        justify-content: center !important; /* [cite: 136] */
-        height: 100% !important; /* [cite: 136] */
-        width: 100% !important; /* [cite: 136] */
-      }
-      [id^="section-benefit"]>div>div>div:first-child i {
-        color: var(--color-white) !important; /* [cite: 137] */
-        font-size: 24px !important; /* [cite: 137] */
-      }
-      [id^="section-benefit"]>div>div>div:nth-child(2) {
-        flex: 1 !important; /* [cite: 137] */
-      }
-      [id^="section-benefit"]>div>div>div:nth-child(2) h3 {
-        font-size: 16px !important; /* [cite: 138] */
-        font-weight: 600 !important; /* [cite: 138] */
-        color: var(--color-text) !important; /* [cite: 138] */
-        margin: 0 0 5px 0 !important; /* [cite: 138] */
-        line-height: 1.2 !important; /* [cite: 139] */
-      }
-      [id^="section-benefit"]>div>div>div:nth-child(2) p {
-        font-size: 14px !important; /* [cite: 139] */
-        color: var(--color-text-secondary) !important; /* [cite: 139] */
-        margin: 0 !important; /* [cite: 139] */
-        line-height: 1.4 !important; /* [cite: 139] */
-      }
-      #text-area-faq { /* This is hidden by JS and replaced */
-        display: none !important; /* [cite: 140] */
-        visibility: hidden !important; /* [cite: 140] */
-        height: 0 !important; /* [cite: 140] */
-        overflow: hidden !important; /* [cite: 140] */
-        opacity: 0 !important; /* [cite: 140] */
-        pointer-events: none !important; /* [cite: 141] */
-      }
-      .bt-faq-container {
-        padding: 0 var(--spacing-lg); /* [cite: 141] */
-        margin-bottom: var(--spacing-xl); /* [cite: 141] */
-        position: relative; /* [cite: 141] */
-        z-index: 10; /* [cite: 141] */
-      }
-      .bt-faq-item {
-        background-color: rgba(255, 255, 255, 0.05); /* [cite: 142] */
-        border-radius: 12px; /* [cite: 142] */
-        margin-bottom: 15px; /* [cite: 142] */
-        overflow: hidden; /* [cite: 142] */
-      }
-      .bt-faq-question {
-        padding: 15px; /* [cite: 142] */
-        cursor: pointer; /* [cite: 143] */
-        display: flex; /* [cite: 143] */
-        justify-content: space-between; /* [cite: 143] */
-        align-items: center; /* [cite: 143] */
-      }
-      .bt-faq-question h3 {
-        font-size: 16px; /* [cite: 143] */
-        font-weight: 600; /* [cite: 143] */
-        margin: 0; /* [cite: 143] */
-        color: #fff; /* [cite: 143] */
-        flex: 1; /* [cite: 144] */
-      }
-      .bt-faq-icon {
-        color: #666; /* [cite: 144] */
-        transition: all 0.3s ease; /* [cite: 144] */
-      }
-      .bt-faq-icon i {
-        color: #666; /* [cite: 144] */
-        transition: all 0.3s ease; /* [cite: 145] */
-        font-size: 20px; /* [cite: 145] */
-      }
-      .bt-faq-item.active .bt-faq-icon i {
-        transform: rotate(180deg); /* [cite: 145] */
-        color: var(--color-primary); /* [cite: 145] */
-      }
-      .bt-faq-item.active .bt-faq-question {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* [cite: 146] */
-      }
-      .bt-faq-answer {
-        max-height: 0; /* [cite: 146] */
-        overflow: hidden; /* [cite: 146] */
-        transition: all 0.3s ease; /* [cite: 147] */
-        background-color: transparent; /* [cite: 147] */
-      }
-      .bt-faq-answer p {
-        color: #bdbdbd; /* [cite: 147] */
-        font-size: 14px; /* [cite: 147] */
-        line-height: 1.5; /* [cite: 147] */
-        margin: 0; /* [cite: 147] */
-        padding: var(--spacing-md); /* [cite: 147] */
-      }
-      [id^="section-list-button"] {
-        padding: 0 var(--spacing-lg) !important; /* [cite: 148] */
-        margin-bottom: var(--spacing-xl) !important; /* [cite: 148] */
-        margin-top: var(--spacing-xl) !important; /* [cite: 148] */
-      }
-      [id^="section-list-button"]>div {
-        margin-bottom: var(--spacing-md) !important; /* [cite: 148] */
-      }
-      [id^="section-list-button"]>div:last-child {
-        margin-bottom: 0 !important; /* [cite: 149] */
-      }
-      [id^="section-list-button"] a[id^="button-"] {
-        display: flex !important; /* [cite: 149] */
-        align-items: center !important; /* [cite: 149] */
-        padding: 8px var(--spacing-md) 8px 68px !important; /* [cite: 150] */
-        border-radius: var(--border-radius-lg) !important; /* [cite: 150] */
-        background-color: rgba(255, 255, 255, 0.08) !important; /* [cite: 150] */
-        color: var(--color-text) !important; /* [cite: 150] */
-        text-decoration: none !important; /* [cite: 151] */
-        font-weight: 600 !important; /* [cite: 151] */
-        font-size: 16px !important; /* [cite: 151] */
-        transition: background-color 0.3s ease !important; /* [cite: 151] */
-        width: 100% !important; /* [cite: 151] */
-        position: relative !important; /* [cite: 151] */
-        height: 70px !important; /* [cite: 152] */
-        min-height: 50px !important; /* [cite: 152] */
-        justify-content: center !important; /* [cite: 152] */
-      }
-      [id^="section-list-button"] a[id^="button-"]:hover {
-        background-color: rgba(255, 255, 255, 0.15) !important; /* [cite: 152] */
-      }
-      [id^="section-list-button"] a[id^="button-"] svg {
-        position: absolute !important; /* [cite: 153] */
-        right: 15px !important; /* [cite: 153] */
-        top: 50% !important; /* [cite: 153] */
-        transform: translateY(-50%) !important; /* [cite: 153] */
-      }
-      [id^="section-list-button"] a[id^="button-"] span {
-        order: 1 !important; /* [cite: 154] */
-      }
-      [id^="section-list-button"] a[id^="button-"] .inline-flex.mr-\[8px\] { /* Highly specific selector */
-        margin-right: 0 !important; /* [cite: 154] */
-        margin-left: 8px !important; /* [cite: 154] */
-      }
-      [id^="section-list-button"] [id^="img-"] { /* Selector might be too generic */
-        position: absolute !important; /* [cite: 155] */
-        left: var(--spacing-md) !important; /* [cite: 155] */
-        width: 55px !important; /* [cite: 155] */
-        height: 55px !important; /* [cite: 155] */
-        border-radius: var(--border-radius-md) !important; /* [cite: 155] */
-        overflow: hidden !important; /* [cite: 156] */
-        top: 50% !important; /* [cite: 156] */
-        transform: translateY(-50%) !important; /* [cite: 156] */
-        /* margin-top: 35px !important; source has this but it might conflict with translateY */ /* [cite: 156] */
-        /* margin-left: -7px !important; source has this, might be specific adjustment */ /* [cite: 156] */
-      }
-      [id^="section-list-button"] [id^="img-"] img { /* Selector might be too generic */
-        width: 100% !important; /* [cite: 157] */
-        height: 100% !important; /* [cite: 157] */
-        object-fit: cover !important; /* [cite: 157] */
-      }
-      [id^="section-list-button"]>div>div {
-        display: flex !important; /* [cite: 157] */
-        flex-direction: column !important; /* [cite: 158] */
-        width: 100% !important; /* [cite: 158] */
-      }
-      [id^="section-list-button"] a[id^="button-"] svg[name="ic-arrow-opt-down-large"] { /* Specific SVG name */
-        order: 2 !important; /* [cite: 158] */
-        margin-right: 15px !important; /* [cite: 158] */
-        margin-left: auto !important; /* [cite: 158] */
-      }
-      [id^="section-list-button"] a[id^="button-"]>span:not([class*="inline-flex"]) { /* Targets main text span */
-        flex: 1 !important; /* [cite: 159] */
-        text-align: left !important; /* [cite: 159] */
-      }
-
-      /* CSS Tambahan untuk Navbar */
-      .sticky-navbar {
-        position: fixed; /* Diubah ke fixed agar selalu di atas saat scroll */
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-background);
-        padding: 10px var(--spacing-lg);
-        z-index: 1000;
-        display: flex;
-        justify-content: space-around; /* Menyebarkan link secara merata */
-        align-items: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        height: 60px; /* Tinggi navbar */
-        overflow-x: auto; /* Untuk tampilan mobile jika link banyak */
-        white-space: nowrap; /* Mencegah link wrap di mobile */
-      }
-      .sticky-navbar a {
-        color: var(--color-text);
-        text-decoration: none;
-        padding: 8px 12px;
-        font-weight: 500;
-        font-size: 14px;
-        border-radius: var(--border-radius-sm);
-        transition: background-color 0.2s, color 0.2s;
-      }
-      .sticky-navbar a:hover {
-        background-color: var(--color-primary);
-        color: var(--color-white);
-      }
-      /* Penyesuaian untuk konten di bawah navbar */
-      .content-wrapper {
-          margin-top: 60px; /* Sesuaikan dengan tinggi navbar */
-      }
-
-      /* Perbaikan untuk html-viewer jika ada, agar tidak terpengaruh style global */
-      .html-viewer p {
-        margin: 0; /* Reset margin default p di dalam html-viewer jika diperlukan */
-      }
-
+        /* CSS untuk scrolling smooth, opsional */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
-    <nav class="sticky-navbar">
-        <a href="#section-bio">Bio</a>
-        <a href="#section-products">Produk</a>
-        <a href="#section-benefits">Manfaat</a>
-        <a href="#section-testimonials">Testimoni</a>
-        <a href="#section-faq">FAQ</a>
-        <a href="#section-contact">Kontak</a>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero">[Nama Travel Anda]</a>
+            <a href="#unggulan">Paket Unggulan</a>
+            <a href="#biolinks">Info Penting</a>
+            <a href="#testimoni">Testimoni</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+        </div>
     </nav>
 
-    <div class="content-wrapper">
-        <div id="img-cover">
-            <img src="https://via.placeholder.com/1200x180/1E2128/FFFFFF?text=Cover+Image" alt="Cover Image">
+    <section id="hero" class="hero">
+        <h1>Wujudkan Niat Suci Anda ke Baitullah</h1>
+        <p>Perjalanan Haji dan Umroh Aman, Nyaman, dan Berkah bersama [Nama Travel Anda]</p>
+        <a href="#unggulan" class="cta-button">Lihat Paket Unggulan</a>
+    </section>
+
+    <section id="keunggulan-usp">
+        <div class="container">
+            <h2>Mengapa Memilih Kami?</h2>
+            <div class="package-grid"> <div class="package-item"> <img src="https://via.placeholder.com/100x100.png?text=Icon+Pembimbing" alt="Icon Pembimbing">
+                    <h3>Pembimbing Berpengalaman</h3>
+                    <p>Dibimbing oleh ustadz yang ahli di bidangnya dan berpengalaman.</p>
+                </div>
+                <div class="package-item"> <img src="https://via.placeholder.com/100x100.png?text=Icon+Hotel" alt="Icon Hotel">
+                    <h3>Akomodasi Terbaik</h3>
+                    <p>Hotel dekat dengan Masjidil Haram dan Masjid Nabawi.</p>
+                </div>
+                <div class="package-item"> <img src="https://via.placeholder.com/100x100.png?text=Icon+Layanan" alt="Icon Layanan">
+                    <h3>Pelayanan Prima</h3>
+                    <p>Kami siap melayani Anda dari persiapan hingga kepulangan.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <section id="section-bio">
-            <div>
-                <div>
-                    <img src="https://via.placeholder.com/120/0055FF/FFFFFF?text=Bio" alt="Profile Image">
+    <section id="unggulan">
+        <div class="container">
+            <h2>Paket Unggulan Kami</h2>
+            <div class="package-grid">
+                <div class="package-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Paket+Umroh+1" alt="Paket Umroh Barokah">
+                    <h3>Paket Umroh Barokah (9 Hari)</h3>
+                    <p>Keberangkatan: Setiap Awal Bulan</p>
+                    <p>Hotel: Bintang 4</p>
+                    <p>Harga: Mulai dari Rp 25.000.000</p>
+                    <a href="detail-paket-1.html" class="cta-button" style="font-size: 1em; padding: 10px 15px;">Detail Paket</a>
+                </div>
+                <div class="package-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Paket+Umroh+2" alt="Paket Umroh Plus Turki">
+                    <h3>Paket Umroh Plus Turki (12 Hari)</h3>
+                    <p>Keberangkatan: [Tanggal Spesifik]</p>
+                    <p>Hotel: Bintang 5</p>
+                    <p>Harga: Mulai dari Rp 35.000.000</p>
+                    <a href="detail-paket-2.html" class="cta-button" style="font-size: 1em; padding: 10px 15px;">Detail Paket</a>
+                </div>
+                <div class="package-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Paket+Haji" alt="Paket Haji Plus">
+                    <h3>Paket Haji Plus VIP</h3>
+                    <p>Keberangkatan: Sesuai Jadwal Kemenag</p>
+                    <p>Fasilitas: Lengkap dan Nyaman</p>
+                    <p>Harga: Hubungi Kami</p>
+                    <a href="detail-paket-haji.html" class="cta-button" style="font-size: 1em; padding: 10px 15px;">Detail Paket</a>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div class="html-viewer"><p>Nama Anda / Brand Anda</p></div>
-                    <div class="html-viewer"><p>Deskripsi singkat tentang Anda atau brand Anda. Jelaskan apa yang Anda tawarkan.</p></div>
-                    <div>
-                        <div class="html-viewer"><i class="ti ti-map-pin"></i> Lokasi Anda</div>
-                    </div>
+            <br>
+            <a href="semua-paket.html" class="cta-button">Lihat Semua Paket</a>
+        </div>
+    </section>
+
+    <section id="biolinks" style="background-color: #eef;">
+        <div class="container">
+            <h2>Informasi & Pendaftaran</h2>
+            <p>Hubungi kami atau dapatkan informasi lebih lanjut melalui link di bawah ini:</p>
+            <div class="biolinks-container">
+                <a href="https://wa.me/[NomorWhatsAppAnda]?text=Assalamualaikum%2C%20saya%20tertarik%20dengan%20paket%20Haji%2FUmroh" target="_blank" class="biolink-button">💬 Hubungi via WhatsApp</a>
+                <a href="brosur.pdf" target="_blank" class="biolink-button">📄 Unduh Brosur Paket</a>
+                <a href="#kontak" class="biolink-button">📝 Formulir Pendaftaran Online (Contoh ke Kontak)</a>
+                <a href="jadwal-keberangkatan.html" class="biolink-button">🗓️ Lihat Jadwal Keberangkatan</a>
+                <a href="https://instagram.com/[AkunInstagramAnda]" target="_blank" class="biolink-button">📸 Instagram Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni">
+        <div class="container">
+            <h2>Apa Kata Jamaah Kami</h2>
+            <div class="package-grid"> <div class="testimonial-item">
+                    <img src="https://via.placeholder.com/80x80.png?text=Foto+Jamaah+1" alt="Foto Jamaah 1" style="border-radius: 50%; margin-bottom: 10px;">
+                    <p>"Alhamdulillah, pelayanan [Nama Travel Anda] sangat memuaskan. Ibadah jadi lebih khusyuk. Terima kasih!"</p>
+                    <h4><strong>- Bapak Abdullah</strong> <br><small>Jamaah Umroh Januari 2025</small></h4>
+                </div>
+                <div class="testimonial-item">
+                    <img src="https://via.placeholder.com/80x80.png?text=Foto+Jamaah+2" alt="Foto Jamaah 2" style="border-radius: 50%; margin-bottom: 10px;">
+                    <p>"Pembimbingnya sabar dan ilmunya mendalam. Fasilitas juga sesuai dengan yang dijanjikan. Recommended!"</p>
+                    <h4><strong>- Ibu Siti Aminah</strong> <br><small>Jamaah Haji 2024</small></h4>
+                </div>
+                <div class="testimonial-item">
+                    <img src="https://via.placeholder.com/80x80.png?text=Foto+Jamaah+3" alt="Foto Jamaah 3" style="border-radius: 50%; margin-bottom: 10px;">
+                    <p>"Pengalaman umroh pertama yang tak terlupakan. Semuanya diurus dengan baik. Insya Allah berangkat lagi dengan travel ini."</p>
+                    <h4><strong>- Keluarga Ahmad</strong> <br><small>Jamaah Umroh Plus Keluarga Maret 2025</small></h4>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="section-social-top">
-            <div>
-                <a href="#">Tombol Aksi Utama</a>
+    <section id="galeri" style="background-color: #f0f0f0;">
+        <div class="container">
+            <h2>Galeri Perjalanan Ibadah</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Foto+Ka'bah" alt="Foto Ka'bah">
+                    <p>Suasana di Masjidil Haram</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Foto+Masjid+Nabawi" alt="Foto Masjid Nabawi">
+                    <p>Kemegahan Masjid Nabawi</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Foto+Jamaah" alt="Foto Kebersamaan Jamaah">
+                    <p>Kebersamaan Jamaah</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200.png?text=Hotel+Makkah" alt="Foto Hotel Makkah">
+                    <p>Fasilitas Hotel di Makkah</p>
+                </div>
+                </div>
+            <br>
+            <a href="galeri-lengkap.html" class="cta-button">Lihat Galeri Lengkap</a>
+        </div>
+    </section>
+
+    <section id="tentang">
+        <div class="container">
+            <h2>Tentang [Nama Travel Anda]</h2>
+            <img src="https://via.placeholder.com/150x150.png?text=Logo+Travel+Anda" alt="Logo Travel Anda" style="margin-bottom: 20px;">
+            <p>Kami adalah biro perjalanan Haji dan Umroh resmi yang terdaftar di Kemenag RI dengan nomor izin [Nomor Izin PPIU/PIHK Anda]. Sejak [Tahun Berdiri], kami berkomitmen untuk memberikan pelayanan terbaik bagi para tamu Allah.</p>
+            <p>Visi kami adalah [Visi Perusahaan Anda]. Misi kami adalah [Misi Perusahaan Anda].</p>
             </div>
-            <div class="bt-social-icons-wrapper">
-                <a href="#" class="bt-social-icon-item"><i class="ti ti-brand-facebook"></i></a>
-                <a href="#" class="bt-social-icon-item"><i class="ti ti-brand-instagram"></i></a>
-                <a href="#" class="bt-social-icon-item"><i class="ti ti-brand-twitter"></i></a>
-                <a href="#" class="bt-social-icon-item"><i class="ti ti-brand-youtube"></i></a>
+    </section>
+
+    <section id="kontak" style="background-color: #e0f7fa;">
+        <div class="container">
+            <h2>Hubungi Kami & Daftar Sekarang</h2>
+            <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau Anda siap untuk mendaftar.</p>
+            <form action="[URL_Proses_Form_Anda]" method="POST" style="max-width: 600px; margin: auto; text-align: left;">
+                <div style="margin-bottom: 15px;">
+                    <label for="nama">Nama Lengkap:</label><br>
+                    <input type="text" id="nama" name="nama" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="telepon">Nomor WhatsApp/Telepon:</label><br>
+                    <input type="tel" id="telepon" name="telepon" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="paket">Paket yang Diminati:</label><br>
+                    <select id="paket" name="paket" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="">-- Pilih Paket --</option>
+                        <option value="Umroh Barokah">Umroh Barokah (9 Hari)</option>
+                        <option value="Umroh Plus Turki">Umroh Plus Turki (12 Hari)</option>
+                        <option value="Haji Plus">Haji Plus VIP</option>
+                        <option value="Lainnya">Lainnya/Belum Tahu</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="pesan">Pesan Tambahan:</label><br>
+                    <textarea id="pesan" name="pesan" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="cta-button">Kirim Pertanyaan / Daftar</button>
+                </div>
+            </form>
+            <br>
+            <p>Atau kunjungi kantor kami di:</p>
+            <p><strong>[Nama Travel Anda]</strong><br>
+            [Alamat Lengkap Kantor Anda]<br>
+            Telepon: [Nomor Telepon Kantor]<br>
+            Email: [Alamat Email Kantor]</p>
+            <p>Jam Operasional: [Hari, Jam Buka - Tutup]</p>
             </div>
-        </section>
+    </section>
 
-        <section id="section-title-products" class="section-title-general"> <div class="bt-section-title-wrapper">
-                <h2 class="bt-section-title-heading">Produk Unggulan</h2>
-                <span class="bt-badge-blue">BARU</span>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="tahun"></span> [Nama Travel Anda]. All Rights Reserved.</p>
+            <p>Terdaftar Resmi di Kementrian Agama RI - PPIU No: [Nomor Izin Anda]</p>
+            <p>
+                <a href="syarat-ketentuan.html" style="color: white; text-decoration: underline;">Syarat & Ketentuan</a> |
+                <a href="kebijakan-privasi.html" style="color: white; text-decoration: underline;">Kebijakan Privasi</a>
+            </p>
             </div>
-            <div><div><div class="html-viewer"><p>Lihat koleksi produk terbaik kami.</p></div></div></div>
-        </section>
+    </footer>
 
-        <section id="section-products"> <div id="section-product-slide-1" class="product-slides"> <div>
-                    <div>
-                        <div><div><img src="https://via.placeholder.com/400x225/CCCCCC/000000?text=Produk+1" alt="Produk 1"></div></div>
-                        <div><div class="html-viewer"><p>Nama Produk Slide 1</p></div></div>
-                        <div><div class="html-viewer"><p>Deskripsi singkat produk slide 1.</p></div></div>
-                        <div>
-                            <div class="product-price-container">
-                                <div class="product-price-block">
-                                    <span class="product-original-price">Rp 150.000</span>
-                                    <span class="product-current-price">Rp 100.000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div><a href="#" id="button-buy-slide-1">Beli Sekarang</a></div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><div><img src="https://via.placeholder.com/400x225/CCCCCC/000000?text=Produk+2" alt="Produk 2"></div></div>
-                        <div><div class="html-viewer"><p>Nama Produk Slide 2</p></div></div>
-                        <div><div class="html-viewer"><p>Deskripsi singkat produk slide 2.</p></div></div>
-                        <div>
-                            <div class="product-price-container">
-                                <div class="product-price-block">
-                                    <span class="product-current-price">Rp 120.000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div><a href="#" id="button-buy-slide-2">Lihat Detail</a></div>
-                    </div>
-                </div>
-                 <div>
-                    <div>
-                        <div><div><img src="https://via.placeholder.com/400x225/CCCCCC/000000?text=Produk+3" alt="Produk 3"></div></div>
-                        <div><div class="html-viewer"><p>Nama Produk Slide 3</p></div></div>
-                        <div><div class="html-viewer"><p>Deskripsi produk yang sedikit lebih panjang untuk menguji line clamp.</p></div></div>
-                        <div>
-                            <div class="product-price-container">
-                                 <div class="product-price-block">
-                                    <span class="product-original-price">Rp 250.000</span>
-                                    <span class="product-current-price">Rp 200.000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div><a href="#" id="button-buy-slide-3">Beli Sekarang</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="section-title-bigproducts" class="section-title-general" style="margin-top:var(--spacing-2xl)">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Produk Spesial</h2>
-                </div>
-                 <div><div><div class="html-viewer"><p>Produk dengan penawaran istimewa.</p></div></div></div>
-            </div>
-            <div id="section-product-big-1" class="product-big-cards"> <div>
-                    <div>
-                        <div><div><img src="https://via.placeholder.com/600x338/DDDDDD/000000?text=Produk+Besar+1" alt="Produk Besar 1"></div></div>
-                        <div><div class="html-viewer"><p>Nama Produk Besar 1</p></div></div>
-                        <div><div class="html-viewer"><p>Deskripsi lebih detail untuk produk besar ini agar bisa dilihat tata letaknya.</p></div></div>
-                        <div class="bt-card-big-divider"></div>
-                        <div>
-                            <div class="bt-card-big-price-container">
-                                <div class="bt-card-big-price-block">
-                                    <span class="bt-card-big-original-price">Rp 300.000</span>
-                                    <span class="bt-card-big-current-price">Rp 250.000</span>
-                                </div>
-                                <a href="#" id="button-buy-big-1"><i class="ti ti-shopping-cart"></i> Beli</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><div><img src="https://via.placeholder.com/600x338/DDDDDD/000000?text=Produk+Besar+2" alt="Produk Besar 2"></div></div>
-                        <div><div class="html-viewer"><p>Nama Produk Besar 2</p></div></div>
-                        <div><div class="html-viewer"><p>Ini adalah deskripsi lain untuk produk spesial yang kedua.</p></div></div>
-                        <div class="bt-card-big-divider"></div>
-                        <div>
-                            <div class="bt-card-big-price-container">
-                                <div class="bt-card-big-price-block">
-                                    <span class="bt-card-big-current-price">Rp 275.000</span>
-                                </div>
-                                <a href="#" id="button-buy-big-2">Lihat Opsi</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="section-title-horizontalproducts" class="section-title-general" style="margin-top:var(--spacing-2xl)">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Layanan Kami</h2>
-                </div>
-                 <div><div><div class="html-viewer"><p>Berbagai layanan yang kami tawarkan.</p></div></div></div>
-            </div>
-            <div id="section-product-card-horizontal-1"> <div>
-                    <div>
-                        <div><img src="https://via.placeholder.com/120x120/EEEEEE/000000?text=Layanan+1" alt="Layanan 1"></div>
-                        <div>
-                            <div id="text-area-h-1"><div class="html-viewer"><p>Nama Layanan Horizontal 1</p></div></div>
-                            <div class="bt-card-horizontal-price-container">
-                                <div class="bt-card-horizontal-price-block">
-                                    <span class="bt-card-horizontal-original-price">Rp 50.000</span>
-                                    <span class="bt-card-horizontal-price">Rp 40.000</span>
-                                </div>
-                                <a href="#" class="bt-card-horizontal-cart-button"><i class="ti ti-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><img src="https://via.placeholder.com/120x120/EEEEEE/000000?text=Layanan+2" alt="Layanan 2"></div>
-                        <div>
-                            <div id="text-area-h-2"><div class="html-viewer"><p>Nama Layanan Horizontal 2 dengan judul yang lebih panjang untuk tes</p></div></div>
-                            <div class="bt-card-horizontal-price-container">
-                                <div class="bt-card-horizontal-price-block">
-                                    <span class="bt-card-horizontal-price">Rp 65.000</span>
-                                </div>
-                                <a href="#" class="bt-card-horizontal-cart-button"><i class="ti ti-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> <section id="section-benefits">
-            <div id="section-title-benefits" class="section-title-general">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Manfaat Produk/Layanan</h2>
-                </div>
-                 <div><div><div class="html-viewer"><p>Keunggulan yang akan Anda dapatkan.</p></div></div></div>
-            </div>
-            <div id="section-benefit-1"> <div>
-                    <div>
-                        <div><div class="html-viewer"><i class="ti ti-check"></i></div></div>
-                        <div>
-                            <h3>Manfaat Utama 1</h3>
-                            <p>Penjelasan singkat mengenai manfaat pertama dari produk atau layanan Anda.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div style="margin-top: var(--spacing-md);">
-                    <div>
-                        <div><div class="html-viewer"><i class="ti ti-thumb-up"></i></div></div>
-                        <div>
-                            <h3>Manfaat Utama 2</h3>
-                            <p>Penjelasan singkat mengenai manfaat kedua yang sangat menguntungkan.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div style="margin-top: var(--spacing-md);">
-                    <div>
-                        <div><div class="html-viewer"><i class="ti ti-star"></i></div></div>
-                        <div>
-                            <h3>Manfaat Utama 3</h3>
-                            <p>Penjelasan singkat mengenai manfaat ketiga yang membuat produk ini spesial.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section-testimonials">
-             <div id="section-title-testimony" class="section-title-general">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Apa Kata Mereka?</h2>
-                </div>
-                 <div><div><div class="html-viewer"><p>Simak pengalaman pelanggan kami.</p></div></div></div>
-            </div>
-            <div id="section-testimony"> <div> <div class="flex w-full flex-col space-y-[24px]"> <div class="rounded border-[2px]" style="padding: var(--spacing-md); background: var(--color-white); color: var(--color-text-dark);">
-                            <div class="html-viewer"><p><strong>Pelanggan A</strong></p></div>
-                            <div class="html-viewer" style="margin-top: var(--spacing-sm);"><p>"Produknya luar biasa! Sangat membantu pekerjaan saya sehari-hari. Pelayanannya juga ramah."</p></div>
-                        </div>
-                        <div class="rounded border-[2px]" style="padding: var(--spacing-md); background: var(--color-white); color: var(--color-text-dark);">
-                            <div class="html-viewer"><p><strong>Pelanggan B</strong></p></div>
-                            <div class="html-viewer" style="margin-top: var(--spacing-sm);"><p>"Saya sangat puas dengan hasilnya. Kualitasnya tidak diragukan lagi. Pasti akan order lagi!"</p></div>
-                        </div>
-                        <div class="rounded border-[2px]" style="padding: var(--spacing-md); background: var(--color-white); color: var(--color-text-dark);">
-                             <div class="html-viewer"><p><strong>Pelanggan C</strong></p></div>
-                            <div class="html-viewer" style="margin-top: var(--spacing-sm);"><p>"Awalnya ragu, tapi setelah mencoba, saya jadi ketagihan. Recommended seller!"</p></div>
-                        </div>
-                        <div class="rounded border-[2px]" style="padding: var(--spacing-md); background: var(--color-white); color: var(--color-text-dark);">
-                             <div class="html-viewer"><p><strong>Pelanggan D</strong></p></div>
-                            <div class="html-viewer" style="margin-top: var(--spacing-sm);"><p>"Harga terjangkau dengan kualitas premium. Jangan ragu untuk membeli di sini."</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section-faq">
-             <div id="section-title-faq" class="section-title-general">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Pertanyaan Umum (FAQ)</h2>
-                </div>
-                <div><div><div class="html-viewer"><p>Temukan jawaban atas pertanyaan yang sering diajukan.</p></div></div></div>
-            </div>
-            <div id="text-area-faq">
-                <div class="html-viewer">
-                    <p><strong>Pertanyaan pertama yang sering diajukan?</strong></p>
-                    <p>Ini adalah jawaban untuk pertanyaan pertama. Jawaban bisa panjang dan detail.</p>
-                    <p><br></p> <p><strong>Apakah produk ini aman digunakan?</strong></p>
-                    <p>Tentu saja, produk kami telah melalui berbagai uji coba dan aman untuk digunakan.</p>
-                    <p><br></p>
-                    <p><strong>Bagaimana cara melakukan pemesanan?</strong></p>
-                    <p>Anda bisa memesan melalui tombol "Beli Sekarang" atau menghubungi kontak kami.</p>
-                     <p><br></p>
-                    <p><strong>Berapa lama proses pengiriman?</strong></p>
-                    <p>Proses pengiriman biasanya memakan waktu 2-5 hari kerja tergantung lokasi Anda.</p>
-                </div>
-            </div>
-            </section>
-
-        <section id="section-contact"> <div id="section-title-list-button" class="section-title-general">
-                <div class="bt-section-title-wrapper">
-                    <h2 class="bt-section-title-heading">Hubungi Kami</h2>
-                </div>
-                <div><div><div class="html-viewer"><p>Jangan ragu untuk menghubungi kami jika ada pertanyaan.</p></div></div></div>
-            </div>
-            <div id="section-list-button-1"> <div>
-                    <div>
-                        <a href="https://wa.me/6281234567890" id="button-wa" target="_blank">
-                            <div id="img-wa" style="margin-top:0; margin-left:0;"> <img src="https://via.placeholder.com/55/25D366/FFFFFF?text=WA" alt="WhatsApp">
-                            </div>
-                            <span>Hubungi via WhatsApp</span>
-                            <svg name="ic-arrow-opt-down-large" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary);">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div style="margin-top: var(--spacing-md);">
-                    <div>
-                        <a href="mailto:info@example.com" id="button-email" target="_blank">
-                             <div id="img-email" style="margin-top:0; margin-left:0;">
-                                <img src="https://via.placeholder.com/55/7F7F7F/FFFFFF?text=@" alt="Email">
-                            </div>
-                            <span>Kirim Email kepada Kami</span>
-                            <svg name="ic-arrow-opt-down-large" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary);">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer style="text-align: center; padding: var(--spacing-xl); margin-top: var(--spacing-2xl); background-color: rgba(0,0,0,0.2);">
-            <p>&copy; 2024 Nama Anda / Brand Anda. All Rights Reserved.</p>
-        </footer>
-
-    </div> <script>
-      // Script dari file yang Anda berikan
-      document.addEventListener('DOMContentLoaded', function () {
-        const sliders = document.querySelectorAll('[id^="section-product-slide-"]');
-        sliders.forEach(slider => {
-          let isDown = false;
-          let startX;
-          let scrollLeft;
-          slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            slider.classList.add('dragging');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft; // [cite: 161]
-            e.preventDefault();
-          });
-          slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('dragging');
-          });
-          slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('dragging'); // [cite: 162]
-            setTimeout(() => {
-              slider.style.scrollBehavior = 'smooth';
-            }
-              , 50);
-          }); // [cite: 163]
-          slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            slider.scrollLeft = scrollLeft - walk;
-          });
-          slider.addEventListener('touchstart', (e) => { // [cite: 164]
-            isDown = true;
-            slider.classList.add('dragging');
-            startX = e.touches[0].pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
-          }
-            , {
-              passive: true
-            });
-          slider.addEventListener('touchend', () => { // [cite: 165]
-            isDown = false;
-            slider.classList.remove('dragging');
-            setTimeout(() => {
-              slider.style.scrollBehavior = 'smooth';
-            }
-              , 50);
-          });
-          slider.addEventListener('touchmove', (e) => { // [cite: 166]
-            if (!isDown) return;
-            const x = e.touches[0].pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            slider.scrollLeft = scrollLeft - walk;
-          }
-            , {
-              passive: true
-            });
-        }); // [cite: 167]
-      });
-
-      document.addEventListener('DOMContentLoaded', function () {
-        function duplicateTestimonials() {
-          const testimonyContainer = document.querySelector('#section-testimony .flex.w-full.flex-col.space-y-\\[24px\\]');
-          if (!testimonyContainer) return; // Jika container tidak ditemukan
-          const testimonials = testimonyContainer.querySelectorAll('.rounded.border-\\[2px\\]');
-          if (testimonials.length === 0) return; // Jika tidak ada testimoni awal
-
-          const originalTestimonials = Array.from(testimonials);
-          const cloneCount = 3; // Jumlah kloning
-          for (let i = 0; i < cloneCount; i++) {
-            originalTestimonials.forEach(testimonial => {
-              const clone = testimonial.cloneNode(true);
-              testimonyContainer.appendChild(clone);
-            });
-          } // [cite: 168]
-        }
-        // Panggil setelah DOM siap, mungkin beri sedikit delay jika konten dinamis
-        setTimeout(duplicateTestimonials, 500); // [cite: 168]
-      });
-
-      document.addEventListener('DOMContentLoaded', function () { // [cite: 169]
-        function initFaqAccordion() {
-          const originalFaq = document.getElementById('text-area-faq');
-          if (!originalFaq) {
-            console.warn("Element with ID 'text-area-faq' not found.");
-            return;
-          }
-          originalFaq.style.cssText = `
-              display: none !important;
-              visibility: hidden !important;
-              height: 0 !important;
-              overflow: hidden !important; /* [cite: 170] */
-              opacity: 0 !important;
-              position: absolute !important;
-              pointer-events: none !important;
-          `;
-          const existingCustomFaq = document.querySelector('.bt-faq-container');
-          if (existingCustomFaq) {
-            existingCustomFaq.remove();
-          } // [cite: 171]
-
-          const paragraphs = originalFaq.querySelectorAll('.html-viewer p');
-          const faqContent = [];
-          for (let i = 0; i < paragraphs.length; i++) {
-            const paragraph = paragraphs[i];
-            const strong = paragraph.querySelector('strong');
-            if (strong) {
-              const question = strong.textContent.trim(); // [cite: 171]
-              let answer = "";
-              let answerIndex = i + 1; // [cite: 172]
-              while (answerIndex < paragraphs.length) {
-                if (paragraphs[answerIndex].innerHTML === '<br>') { // [cite: 172]
-                  answerIndex++;
-                  continue; // [cite: 173]
-                }
-                if (paragraphs[answerIndex].querySelector('strong')) { // [cite: 173]
-                  break;
-                } // [cite: 174]
-                answer = paragraphs[answerIndex].textContent.trim();
-                faqContent.push({ question, answer }); // [cite: 174]
-                break; // [cite: 175]
-              }
-            }
-          }
-
-          if (faqContent.length === 0) {
-            console.warn("No FAQ content found to build the accordion.");
-            return;
-          }
-
-          const customFaqContainer = document.createElement('div'); // [cite: 175]
-          customFaqContainer.className = 'bt-faq-container'; // [cite: 176]
-          customFaqContainer.id = 'custom-faq'; // [cite: 176]
-
-          faqContent.forEach((item, index) => {
-            const faqItem = document.createElement('div');
-            faqItem.className = 'bt-faq-item';
-            faqItem.setAttribute('data-faq-index', index);
-
-            const faqQuestion = document.createElement('div');
-            faqQuestion.className = 'bt-faq-question';
-
-            const questionText = document.createElement('h3');
-            questionText.textContent = item.question;
-
-            const iconContainer = document.createElement('div');
-            iconContainer.className = 'bt-faq-icon'; // [cite: 177]
-            iconContainer.innerHTML = '<i class="ti ti-chevron-down"></i>'; // [cite: 177]
-
-            faqQuestion.appendChild(questionText);
-            faqQuestion.appendChild(iconContainer);
-
-            const faqAnswer = document.createElement('div');
-            faqAnswer.className = 'bt-faq-answer';
-            const answerText = document.createElement('p');
-            answerText.textContent = item.answer;
-            faqAnswer.appendChild(answerText);
-
-            faqItem.appendChild(faqQuestion);
-            faqItem.appendChild(faqAnswer);
-
-            faqQuestion.addEventListener('click', function () { // [cite: 178]
-              const isActive = faqItem.classList.contains('active');
-              const allFaqs = customFaqContainer.querySelectorAll('.bt-faq-item');
-
-              allFaqs.forEach(item => {
-                const itemAnswer = item.querySelector('.bt-faq-answer');
-                const itemIcon = item.querySelector('.bt-faq-icon i'); // Target <i> inside .bt-faq-icon
-                const itemQuestion = item.querySelector('.bt-faq-question');
-                item.classList.remove('active');
-                itemAnswer.style.maxHeight = '0'; // [cite: 179]
-                if (itemIcon) {
-                    itemIcon.style.transform = 'rotate(0deg)'; // [cite: 179]
-                    itemIcon.style.color = '#666'; // [cite: 179]
-                }
-                itemQuestion.style.borderBottom = 'none'; // [cite: 179]
-              });
-
-              if (!isActive) {
-                faqItem.classList.add('active');
-                const scrollHeight = answerText.scrollHeight; // [cite: 180]
-                faqAnswer.style.maxHeight = `${scrollHeight + 30}px`; // [cite: 180] // +30 for padding
-                const icon = iconContainer.querySelector('.ti-chevron-down');
-                if (icon) {
-                    icon.style.transform = 'rotate(180deg)'; // [cite: 180]
-                    icon.style.color = 'var(--color-primary)'; // [cite: 181]
-                }
-                faqQuestion.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)'; // [cite: 181]
-              }
-            });
-            customFaqContainer.appendChild(faqItem); // [cite: 182]
-          });
-
-          if (originalFaq.parentNode) {
-            originalFaq.parentNode.insertBefore(customFaqContainer, originalFaq.nextSibling);
-          } else {
-             console.warn("Parent node of original FAQ not found. Cannot insert custom FAQ container.");
-             return;
-          }
-
-
-          const observer = new MutationObserver((mutations) => {
-            if (originalFaq.style.display !== 'none') {
-              originalFaq.style.cssText = `
-                    display: none !important;
-                    visibility: hidden !important;
-                    height: 0 !important; /* [cite: 183] */
-                    overflow: hidden !important;
-                    opacity: 0 !important;
-                    position: absolute !important;
-                    pointer-events: none !important; /* [cite: 184] */
-                `;
-            }
-            if (!document.body.contains(customFaqContainer) && originalFaq.parentNode) { // [cite: 184]
-              originalFaq.parentNode.insertBefore(customFaqContainer, originalFaq.nextSibling);
-            }
-          });
-          observer.observe(document.body, { // [cite: 185]
-            childList: true,
-            subtree: true
-          }); // [cite: 185]
-
-          setTimeout(() => { // [cite: 186]
-            const firstQuestion = customFaqContainer.querySelector('.bt-faq-question');
-            if (firstQuestion) {
-              firstQuestion.click();
-            }
-          }, 500); // [cite: 186]
-        } // [cite: 187]
-
-        let attempts = 0; // [cite: 187]
-        const maxAttempts = 10; // [cite: 187]
-        function attemptInit() { // [cite: 188]
-          if (document.getElementById('text-area-faq')) {
-            initFaqAccordion();
-            return true; // [cite: 189]
-          }
-          return false; // [cite: 189]
-        } // [cite: 190]
-
-        if (!attemptInit()) {
-          const interval = setInterval(() => {
-            attempts++;
-            if (attemptInit() || attempts >= maxAttempts) {
-              clearInterval(interval);
-            }
-          }, 500); // [cite: 190]
-        } // [cite: 191]
-      });
-
-      document.addEventListener('DOMContentLoaded', function() { // [cite: 191]
-        // Script untuk menghapus box-shadow bawaan template jika ada
-        const targetDiv = document.querySelector('div.max-w-\\[510px\\].md\\:max-w-\\[688px\\].min-h-\\[500px\\].flex.w-full.flex-col.bg-\\[var\\(--page-bg\\)\\]');
-        if (targetDiv && targetDiv.hasAttribute('style')) {
-          let style = targetDiv.getAttribute('style');
-          style = style.replace(/box-shadow:[^;]+;?/g, ''); // Menghapus properti box-shadow
-          if (style.trim() === '') {
-          targetDiv.removeAttribute('style');
-          } else {
-          targetDiv.setAttribute('style', style);
-          }
-        }
-      }); // [cite: 192]
-
-      // Script untuk smooth scroll dari navbar
-      document.querySelectorAll('.sticky-navbar a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const targetId = this.getAttribute('href');
-              const targetElement = document.querySelector(targetId);
-              if (targetElement) {
-                  const navbarHeight = document.querySelector('.sticky-navbar').offsetHeight;
-                  const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                  const offsetPosition = elementPosition - navbarHeight;
-
-                  window.scrollTo({
-                      top: offsetPosition,
-                      behavior: 'smooth'
-                  });
-              }
-          });
-      });
-
+    <script>
+        // Script sederhana untuk menampilkan tahun di footer secara dinamis
+        document.getElementById('tahun').textContent = new Date().getFullYear();
     </script>
-</body>
+    </body>
 </html>
